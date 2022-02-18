@@ -121,8 +121,9 @@
       <AdditionalIncludeDirectories>D:\UWE\AT\Quack1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>D3D11.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,19 +137,48 @@
       <AdditionalIncludeDirectories>D:\UWE\AT\Quack1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>D3D11.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Quack\Quack\src\Core.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="DoomTime.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="CoreDX11.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GenericComponent.cpp" />
+    <ClCompile Include="PGRP.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="WICTextureLoader11.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="DoomTime.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="CoreDX11.h" />
+    <ClInclude Include="Effects.fx" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GenericComponent.h" />
+    <ClInclude Include="PGRP.h" />
+    <ClInclude Include="SharedData.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="WICTextureLoader11.h" />
     <ClInclude Include="WindowConfig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="seamless_dirt_ground_texture_by_hhh316_d4fon0w-pre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Level1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
